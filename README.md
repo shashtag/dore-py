@@ -1,10 +1,27 @@
+```text
+
+8 888888888o.           ,o888888o.      8 888888888o.    8 888888888888
+8 8888    `^888.     . 8888     `88.    8 8888    `88.   8 8888
+8 8888        `88.  ,8 8888       `8b   8 8888     `88   8 8888
+8 8888         `88  88 8888        `8b  8 8888     ,88   8 8888
+8 8888          88  88 8888         88  8 8888.   ,88'   8 888888888888
+8 8888          88  88 8888         88  8 888888888P'    8 8888
+8 8888         ,88  88 8888        ,8P  8 8888`8b        8 8888
+8 8888        ,88'  `8 8888       ,8P   8 8888 `8b.      8 8888
+8 8888    ,o88P'     ` 8888     ,88'    8 8888   `8b.    8 8888
+8 888888888P'           `8888888P'      8 8888     `88.  8 888888888888
+
+
+                   SCHEMA BASED FAKE DATA GENERATOR
+```
+
 # What is Dore?
 
-Dore is a schema based fake data generation tool.
+Simply put, Dore is a schema based fake data generation tool.
 
 # Why is it called Dore?
 
-No particular reason. I just wanted to share my thoughts on how we should have spelt *door*. 
+No particular reason. I just wanted to share my thoughts on how we should have spelt `door`. 
 
 # What can you do with it?
 
@@ -18,7 +35,7 @@ With Dore, you can:
   command.
   
   
-* Generate fake data with **dependencies between models regardless of the protocol**. <br> 
+* Generate fake data with **dependencies/hierarchy between models regardless of the protocol**. <br> 
   For example, you can have a column in a MySQL table be dependent/have a FK relationship on a field in an 
   Elasticsearch index.
   
@@ -33,32 +50,24 @@ With Dore, you can:
 
 ### Installation
 
-##### Optional: Create a virtual env and activate it.
+##### Optional, but recommended: Create a virtual env and activate it.
 
 ```shell
-python3 -m venv venv && source venv/bin/activate
+(venv)$ python3 -m venv venv && source venv/bin/activate
 ```
 
 #### Install Dore
 
 ```shell
-pip install dore
+(venv)$ pip install dore
 ```
+
 ### Usage
-
 ```shell
-dore --manifest /path/to/manifest.json --var1=val1 --var2=val2 ...
+(venv)$ dore --manifest /path/to/manifest.json --var1=val1 --var2=val2 ...
 ```
 
-
-## Useful Links
-
-* [GitHub](https://github.com/bkn-dore/dore-py)
-* [Tutorial](https://github.com/bkn-dore/dore-py/tree/master/tutorial)
-* [Examples](https://github.com/bkn-dore/dore-py/tree/master/examples)
-* [Manifest Docs](https://bkn-dore.github.io)
-
-## CLI Options
+### CLI Options
 `Dore` command supports the following cli args. Required options are specified with `**` next to them. 
 
 Details for each supported cli arg is mentioned in [further sections](#More on CLI options)
@@ -72,7 +81,40 @@ Details for each supported cli arg is mentioned in [further sections](#More on C
 | `--drop-conflicting-models`  | [Conflict handling options](#handling-conflicts)             | -             |
 | `--var1=val1`, `--var2=val2` | Provide values for [Manifest variables](#Manifest Variables) | -             |
 
-# Terminology
+## Useful Links
+
+* [GitHub](https://github.com/bkn-dore/dore-py)
+* [Tutorial](https://github.com/bkn-dore/dore-py/tree/master/tutorial)
+* [Examples](https://github.com/bkn-dore/dore-py/tree/master/examples)
+* [Manifest Docs](https://bkn-dore.github.io)
+
+### Tutorial
+
+If this is the first time you're using Dore, we recommend you check our 
+[tutorial](https://github.com/bkn-dore/dore-py/tree/master/tutorial) out to get familiar with it. 
+
+In the tutorial, we go through a hands on exercise where we use Dore to generate data for a popular (and relatively 
+non trivial) database schema from scratch!
+
+### Examples
+
+There are examples present in [examples](https://github.com/bkn-dore/dore-py/tree/master/examples) 
+directory of this repo with instructions on how to execute them. These can help you get started on creating your first 
+manifest or can serve as a reference in case you're stuck.
+
+
+## Supported Protocols
+
+Currently, Dore supports the following protocols:
+
+| NoSQL Protocols | SQL Protocols    |
+| ----------------|------------------|
+| Elasticsearch   | MySQL            |
+| MongoDB         | PostgreSQL       |
+
+
+
+## Terminology Reference
 
 You will come across these terms quite frequently in Dore's documentation:
 
@@ -112,37 +154,16 @@ Let's drive these concepts home with a few examples:
     * The model has **attributes** `a`, `b`, and `c`.
   
   
-### Supported Protocols
-
-Currently, Dore supports the following protocols.
-
-| NoSQL Protocols | SQL Protocols    |
-| ----------------|------------------|
-| Elasticsearch   | MySQL            |
-| MongoDB         | PostgreSQL       |
   
-# Tutorial
 
-If this is the first time you're using Dore, we recommend you check our [tutorial](./tutorial) out to get familiar with
-it. 
-
-In the tutorial, we go through a hands on exercise where we use Dore to generate data for a popular (and relatively 
-non trivial) database schema from scratch!
-
-## Examples
-
-There are examples present in [examples](./examples) directory of this repo with instructions
-on how to execute them. These can help you get started on creating your first manifest or can serve as a reference 
-in case you're stuck.
-
-# More on CLI options
+## More on CLI options
 
 ### Manifest
 
 The manifest is the core config that contains specifications about the target data.
 
 A detailed documentation for the *Manifest* is available here:
-* https://Dore-datagen.github.io/
+* https://bkn-dore.github.io/
 
 ### Caching
 In order to generate records for models that are dependent on other models, the dependent model's records are loaded 
@@ -152,7 +173,7 @@ cache. But, you can make Dore work with other caches as well.
 #### Caching with Redis
 Run Dore with redis cache by using `--cache redis` argument while invoking Dore:
 ```shell
-(dore-venv)$ dore \
+(venv)$ dore --manifest /path/to/manifest \
   ...
   --cache redis \
   --redis-host <redis-host> \
@@ -184,7 +205,7 @@ When this option is used, Dore **DROPS / DELETES** conflicting models in the
 datastore and re-creates them.
 
 ```shell
-(dore-venv)$ dore ... --drop-conflicting-models ...
+(venv)$ dore --manifest /path/to/manifest ... --drop-conflicting-models ...
 ```
 <br>
 
@@ -205,7 +226,7 @@ For example, if you invoked Dore, you would see something like the below in outp
 ```shell
 # First invocation (without --seed flag)
 
-(dore-venv)$ dore ...
+(venv)$ dore --manifest /path/to/manifest ...
 
 # --- Logs ---
 
@@ -220,5 +241,39 @@ You can then invoke Dore with above seed value in any subsequent runs and reprod
 ```shell
 # Second, Third, Nth invocation with --seed flag produces same results as first invocation.
 
-(dore-venv)$ dore ... --seed -4140708867 ...
+(venv)$ dore ... --seed -4140708867 ...
 ```
+
+
+### Manifest Variables
+
+You can use variables in the manifest file by using the mustache `{{varname}}` syntax and provide values to those 
+variables when invoking Dore by using `--varname=value` as cli arguments.
+
+For example, you could define a MySQL datastore in your manifest like the one shown below to avoid inserting 
+credentials in manifest file.
+
+```json
+{
+  "example_datastore": {
+    "protocol": "mysql",
+    "properties": {
+      "username": "{{mysql-username}}",
+      "password": "{{mysql-password}}"
+    }
+  }
+}
+```
+
+Note that we have used two variables `mysql-username` and `mysql-password`.
+
+While invoking Dore, you can provide values for these variables like so:
+
+```shell
+(venv)$ --manifest /path/to/manifest \
+  ...
+  --mysql-username=root \
+  --mysql-password=password \
+  ...
+```
+And Dore will use the values you provided when working with the Manifest. 
