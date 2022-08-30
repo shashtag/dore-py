@@ -4,9 +4,9 @@ Dore is a schema based fake data generation tool.
 
 # Why is it called Dore?
 
-No particular reason. I just wanted to share with the world about my thoughts on how we should have spelt *door*. 
+No particular reason. I just wanted to share my thoughts on how we should have spelt *door*. 
 
-# What can you do with Dore?
+# What can you do with it?
 
 Dore allows you to define the details of your target data in a config file, known as the **Manifest**, and Dore
 takes care of generating this data for you. <br>
