@@ -1,0 +1,66 @@
+{
+  "records": 25,
+  "datastore": "tpch-elasticsearch8",
+  "properties": {
+    "indexName": "nation"
+  },
+  "attributes": {
+    "key": {
+      "properties": {
+        "fieldName": "n_nationkey",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "name": {
+      "properties": {
+        "fieldName": "n_name",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "selector": {
+          "roundRobin": {
+            "items": [
+              "ALGERIA",
+              "ARGENTINA",
+              "BRAZIL",
+              "CANADA",
+              "EGYPT",
+              "ETHIOPIA",
+              "FRANCE",
+              "GERMANY",
+              "INDIA",
+              "INDONESIA"
+            ]
+          }
+        }
+      }
+    },
+    "regionKey": {
+      "properties": {
+        "fieldName": "n_regionkey",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "ref": "region.key"
+      }
+    },
+    "comment": {
+      "properties": {
+        "fieldName": "n_comment",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

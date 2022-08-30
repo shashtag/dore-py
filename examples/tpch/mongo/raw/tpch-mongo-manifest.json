@@ -1,0 +1,35 @@
+{
+  "id": "tpch_mongo",
+  "version": "1",
+  "models": {
+    "customer": {
+      "ref": "{{manifest-dir}}/tpch-customer-mongo-model.json"
+    },
+    "orders": {
+      "ref": "{{manifest-dir}}/tpch-orders-mongo-model.json"
+    },
+    "nation": {
+      "ref": "{{manifest-dir}}/tpch-nation-mongo-model.json"
+    },
+    "region": {
+      "ref": "{{manifest-dir}}/tpch-region-mongo-model.json"
+    },
+    "lineItem": {
+      "ref": "{{manifest-dir}}/tpch-lineitem-mongo-model.json"
+    },
+    "part": {
+      "ref": "{{manifest-dir}}/tpch-part-mongo-model.json"
+    },
+    "supplier": {
+      "ref": "{{manifest-dir}}/tpch-supplier-mongo-model.json"
+    },
+    "partSupplier": {
+      "ref": "{{manifest-dir}}/tpch-partsupplier-mongo-model.json"
+    }
+  },
+  "datastores": {
+    "tpch-mongo": {
+      "ref": "{{manifest-dir}}/tpch-mongo-datastore.json"
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "records": 10000,
+  "datastore": "tpch-elasticsearch8",
+  "properties": {
+    "indexName": "supplier"
+  },
+  "attributes": {
+    "key": {
+      "properties": {
+        "fieldName": "s_suppkey",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "nationKey": {
+      "properties": {
+        "fieldName": "s_nationkey",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "ref": "nation.key"
+      }
+    },
+    "comment": {
+      "properties": {
+        "fieldName": "s_comment",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    },
+    "name": {
+      "properties": {
+        "fieldName": "s_name",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "name": {}
+        }
+      }
+    },
+    "address": {
+      "properties": {
+        "fieldName": "s_address",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "address": {}
+        }
+      }
+    },
+    "phone": {
+      "properties": {
+        "fieldName": "s_phone",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "phone_number": {}
+        }
+      }
+    },
+    "accountBalance": {
+      "properties": {
+        "fieldName": "s_acctbal",
+        "fieldType": "float"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 100,
+            "max_value": 1000
+          }
+        }
+      }
+    }
+  }
+}

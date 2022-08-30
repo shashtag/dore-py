@@ -1,0 +1,125 @@
+{
+  "records": 1500000,
+  "datastore": "tpch-mongo",
+  "properties": {
+    "collectionName": "orders"
+  },
+  "attributes": {
+    "date": {
+      "properties": {
+        "fieldName": "o_orderdate"
+      },
+      "value": {
+        "faker": {
+          "date_between": {
+            "start_date": "-1M"
+          }
+        }
+      }
+    },
+    "key": {
+      "properties": {
+        "fieldName": "o_orderkey"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "customerKey": {
+      "properties": {
+        "fieldName": "o_custkey"
+      },
+      "value": {
+        "ref": "customer.key"
+      }
+    },
+    "priority": {
+      "properties": {
+        "fieldName": "o_orderpriority"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "4-NOT SPECIFIED",
+              "1-URGENT",
+              "5-LOW",
+              "3-MEDIUM",
+              "2-HIGH"
+            ]
+          }
+        }
+      }
+    },
+    "shippingPriority": {
+      "properties": {
+        "fieldName": "o_shippriority"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 1,
+            "max_value": 3
+          }
+        }
+      }
+    },
+    "clerk": {
+      "properties": {
+        "fieldName": "o_clerk"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 1,
+            "max_value": 500
+          }
+        }
+      }
+    },
+    "status": {
+      "properties": {
+        "fieldName": "o_orderstatus"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "P",
+              "O",
+              "F"
+            ]
+          }
+        }
+      }
+    },
+    "totalPrice": {
+      "properties": {
+        "fieldName": "o_totalprice"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 100,
+            "max_value": 1000,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "fieldName": "o_comment"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

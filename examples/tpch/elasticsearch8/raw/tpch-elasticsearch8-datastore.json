@@ -1,0 +1,9 @@
+{
+  "protocol": "elasticsearch8",
+  "properties": {
+    "host": "{{datastores-tpch-es-host}}",
+    "port": "{{datastores-tpch-es-port}}",
+    "user": "{{datastores-tpch-es-user}}",
+    "password": "{{datastores-tpch-es-password}}"
+  }
+}

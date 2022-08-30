@@ -1,0 +1,9 @@
+{
+    "properties": {
+        "fieldName": "c_nationkey",
+        "fieldType": "keyword"
+    },
+    "value": {
+        "ref": "nation.key"
+    }
+}

@@ -1,0 +1,69 @@
+{
+  "records": 800000,
+  "datastore": "tpch-mysql",
+  "properties": {
+    "tableName": "partsupp"
+  },
+  "attributes": {
+    "partKey": {
+      "properties": {
+        "columnName": "ps_partkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "ref": "part.key"
+      }
+    },
+    "supplierKey": {
+      "properties": {
+        "columnName": "ps_suppkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "ref": "supplier.key"
+      }
+    },
+    "supplyCost": {
+      "properties": {
+        "columnName": "ps_supplycost",
+        "columnType": "decimal(7, 3)"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 1,
+            "max_value": 1000,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "availableQuantity": {
+      "properties": {
+        "columnName": "ps_availqty",
+        "columnType": "int"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 1,
+            "max_value": 10000
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "columnName": "ps_comment",
+        "columnType": "varchar(512)"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

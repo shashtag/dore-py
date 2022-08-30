@@ -1,0 +1,35 @@
+{
+  "id": "tpch_mysql",
+  "version": "1",
+  "models": {
+    "customer": {
+      "ref": "{{manifest-dir}}/tpch-customer-mysql-model.json"
+    },
+    "orders": {
+      "ref": "{{manifest-dir}}/tpch-orders-mysql-model.json"
+    },
+    "nation": {
+      "ref": "{{manifest-dir}}/tpch-nation-mysql-model.json"
+    },
+    "region": {
+      "ref": "{{manifest-dir}}/tpch-region-mysql-model.json"
+    },
+    "lineItem": {
+      "ref": "{{manifest-dir}}/tpch-lineitem-mysql-model.json"
+    },
+    "part": {
+      "ref": "{{manifest-dir}}/tpch-part-mysql-model.json"
+    },
+    "supplier": {
+      "ref": "{{manifest-dir}}/tpch-supplier-mysql-model.json"
+    },
+    "partSupplier": {
+      "ref": "{{manifest-dir}}/tpch-partsupplier-mysql-model.json"
+    }
+  },
+  "datastores": {
+    "tpch-mysql": {
+      "ref": "{{manifest-dir}}/tpch-mysql-datastore.json"
+    }
+  }
+}

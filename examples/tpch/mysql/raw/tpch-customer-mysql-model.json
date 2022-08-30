@@ -1,0 +1,109 @@
+{
+  "records": 150000,
+  "datastore": "tpch-mysql",
+  "properties": {
+    "tableName": "customer"
+  },
+  "attributes": {
+    "key": {
+      "properties": {
+        "columnName": "c_custkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "marketSegment": {
+      "properties": {
+        "columnName": "c_mktsegment",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "BUILDING",
+              "MACHINERY",
+              "FURNITURE",
+              "AUTOMOBILE",
+              "HOUSEHOLD"
+            ]
+          }
+        }
+      }
+    },
+    "name": {
+      "properties": {
+        "columnName": "c_name",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "faker": {
+          "name": {}
+        }
+      }
+    },
+    "nationKey": {
+      "properties": {
+        "columnName": "c_nationkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "ref": "nation.key"
+      }
+    },
+    "address": {
+      "properties": {
+        "columnName": "c_address",
+        "columnType": "varchar(512)"
+      },
+      "value": {
+        "faker": {
+          "address": {}
+        }
+      }
+    },
+    "phone": {
+      "properties": {
+        "columnName": "c_phone",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "faker": {
+          "phone_number": {}
+        }
+      }
+    },
+    "accountBalance": {
+      "properties": {
+        "columnName": "c_acctbal",
+        "columnType": "decimal(7,2)"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": -1000,
+            "max_value": 1000,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "columnName": "c_comment",
+        "columnType": "varchar(512)"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

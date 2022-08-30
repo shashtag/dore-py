@@ -1,0 +1,62 @@
+{
+  "records": 25,
+  "datastore": "tpch-mongo",
+  "properties": {
+    "collectionName": "nation"
+  },
+  "attributes": {
+    "key": {
+      "properties": {
+        "fieldName": "n_nationkey"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "name": {
+      "properties": {
+        "fieldName": "n_name"
+      },
+      "value": {
+        "selector": {
+          "roundRobin": {
+            "items": [
+              "ALGERIA",
+              "ARGENTINA",
+              "BRAZIL",
+              "CANADA",
+              "EGYPT",
+              "ETHIOPIA",
+              "FRANCE",
+              "GERMANY",
+              "INDIA",
+              "INDONESIA"
+            ]
+          }
+        }
+      }
+    },
+    "regionKey": {
+      "properties": {
+        "fieldName": "n_regionkey"
+      },
+      "value": {
+        "ref": "region.key"
+      }
+    },
+    "comment": {
+      "properties": {
+        "fieldName": "n_comment"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

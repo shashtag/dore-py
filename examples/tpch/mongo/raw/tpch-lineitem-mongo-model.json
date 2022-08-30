@@ -1,0 +1,205 @@
+{
+  "records": 4423659,
+  "datastore": "tpch-mongo",
+  "properties": {
+    "collectionName": "lineitem"
+  },
+  "attributes": {
+    "shippingDate": {
+      "properties": {
+        "fieldName": "l_shipdate"
+      },
+      "value": {
+        "faker": {
+          "date_between": {
+            "start_date": "-1y"
+          }
+        }
+      }
+    },
+    "orderKey": {
+      "properties": {
+        "fieldName": "l_orderkey"
+      },
+      "value": {
+        "ref": "orders.key"
+      }
+    },
+    "discount": {
+      "properties": {
+        "fieldName": "l_discount"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 0,
+            "max_value": 0.3,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "extendedPrice": {
+      "properties": {
+        "fieldName": "l_extendedprice"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 100,
+            "max_value": 10000,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "supplierKey": {
+      "properties": {
+        "fieldName": "l_suppkey"
+      },
+      "value": {
+        "ref": "partSupplier.supplierKey"
+      }
+    },
+    "quantity": {
+      "properties": {
+        "fieldName": "l_quantity"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 1,
+            "max_value": 20
+          }
+        }
+      }
+    },
+    "returnFlag": {
+      "properties": {
+        "fieldName": "l_returnflag"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "N",
+              "A",
+              "R"
+            ]
+          }
+        }
+      }
+    },
+    "partKey": {
+      "properties": {
+        "fieldName": "l_partkey"
+      },
+      "value": {
+        "ref": "partSupplier.partKey"
+      }
+    },
+    "lineStatus": {
+      "properties": {
+        "fieldName": "l_linestatus"
+      },
+      "value": {
+        "ref": "orders.status"
+      }
+    },
+    "tax": {
+      "properties": {
+        "fieldName": "l_tax"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 0,
+            "max_value": 0.5,
+            "right_digits": 1
+          }
+        }
+      }
+    },
+    "commitDate": {
+      "properties": {
+        "fieldName": "l_commitdate"
+      },
+      "value": {
+        "faker": {
+          "date_between": {
+            "start_date": "-1y"
+          }
+        }
+      }
+    },
+    "receiptDate": {
+      "properties": {
+        "fieldName": "l_receiptdate"
+      },
+      "value": {
+        "faker": {
+          "date_between": {
+            "start_date": "-1y"
+          }
+        }
+      }
+    },
+    "shippingMode": {
+      "properties": {
+        "fieldName": "l_shipmode"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "RAIL",
+              "TRUCK",
+              "SHIP",
+              "MAIL",
+              "AIR",
+              "FOB",
+              "REG AIR"
+            ]
+          }
+        }
+      }
+    },
+    "lineNumber": {
+      "properties": {
+        "fieldName": "l_linenumber"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 1,
+            "max_value": 5
+          }
+        }
+      }
+    },
+    "shippingInstructions": {
+      "properties": {
+        "fieldName": "l_shipinstruct"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "fieldName": "l_comment"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

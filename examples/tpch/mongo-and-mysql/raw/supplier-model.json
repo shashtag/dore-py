@@ -1,0 +1,89 @@
+{
+  "records": 10000,
+  "datastore": "tpch-mysql",
+  "properties": {
+    "tableName": "supplier"
+  },
+  "attributes": {
+    "key": {
+      "properties": {
+        "columnName": "s_suppkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "nationKey": {
+      "properties": {
+        "columnName": "s_nationkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "ref": "nation.key"
+      }
+    },
+    "comment": {
+      "properties": {
+        "columnName": "s_comment",
+        "columnType": "varchar(512)"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    },
+    "name": {
+      "properties": {
+        "columnName": "s_name",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "faker": {
+          "name": {}
+        }
+      }
+    },
+    "address": {
+      "properties": {
+        "columnName": "s_address",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "faker": {
+          "address": {}
+        }
+      }
+    },
+    "phone": {
+      "properties": {
+        "columnName": "s_phone",
+        "columnType": "varchar(128)"
+      },
+      "value": {
+        "faker": {
+          "phone_number": {}
+        }
+      }
+    },
+    "accountBalance": {
+      "properties": {
+        "columnName": "s_acctbal",
+        "columnType": "decimal(7,2)"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 100,
+            "max_value": 1000
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "tpch-mysql-and-mongo-combined",
+  "models": {
+    "customer": {
+      "ref": "{{manifest-dir}}/customer-model.json"
+    },
+    "lineitem": {
+      "ref": "{{manifest-dir}}/lineitem-model.json"
+    },
+    "nation": {
+      "ref": "{{manifest-dir}}/nation-model.json"
+    },
+    "orders": {
+      "ref": "{{manifest-dir}}/orders-model.json"
+    },
+    "part": {
+      "ref": "{{manifest-dir}}/part-model.json"
+    },
+    "partsupplier": {
+      "ref": "{{manifest-dir}}/partsupplier-model.json"
+    },
+    "region": {
+      "ref": "{{manifest-dir}}/region-model.json"
+    },
+    "supplier": {
+      "ref": "{{manifest-dir}}/supplier-model.json"
+    }
+  },
+  "datastores": {
+    "tpch-mysql": {
+      "ref": "{{manifest-dir}}/mysql-datastore.json"
+    },
+    "tpch-mongo": {
+      "ref": "{{manifest-dir}}/mongo-datastore.json"
+    }
+  }
+}

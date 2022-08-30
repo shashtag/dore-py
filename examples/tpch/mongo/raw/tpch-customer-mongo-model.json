@@ -1,0 +1,101 @@
+{
+  "records": 150000,
+  "datastore": "tpch-mongo",
+  "properties": {
+    "collectionName": "customer"
+  },
+  "attributes": {
+    "key": {
+      "properties": {
+        "fieldName": "c_custkey"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "marketSegment": {
+      "properties": {
+        "fieldName": "c_mktsegment"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "BUILDING",
+              "MACHINERY",
+              "FURNITURE",
+              "AUTOMOBILE",
+              "HOUSEHOLD"
+            ]
+          }
+        }
+      }
+    },
+    "name": {
+      "properties": {
+        "fieldName": "c_name"
+      },
+      "value": {
+        "faker": {
+          "name": {}
+        }
+      }
+    },
+    "nationKey": {
+      "properties": {
+        "fieldName": "c_nationkey"
+      },
+      "value": {
+        "ref": "nation.key"
+      }
+    },
+    "address": {
+      "properties": {
+        "fieldName": "c_address"
+      },
+      "value": {
+        "faker": {
+          "address": {}
+        }
+      }
+    },
+    "phone": {
+      "properties": {
+        "fieldName": "c_phone"
+      },
+      "value": {
+        "faker": {
+          "phone_number": {}
+        }
+      }
+    },
+    "accountBalance": {
+      "properties": {
+        "fieldName": "c_acctbal"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": -1000,
+            "max_value": 1000,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "fieldName": "c_comment"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

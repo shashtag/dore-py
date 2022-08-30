@@ -1,0 +1,221 @@
+{
+  "records": 4423659,
+  "datastore": "tpch-mysql",
+  "properties": {
+    "tableName": "lineitem"
+  },
+  "attributes": {
+    "shippingDate": {
+      "properties": {
+        "columnName": "l_shipdate",
+        "columnType": "date"
+      },
+      "value": {
+        "faker": {
+          "date_between": {
+            "start_date": "-1y"
+          }
+        }
+      }
+    },
+    "orderKey": {
+      "properties": {
+        "columnName": "l_orderkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "ref": "orders.key"
+      }
+    },
+    "discount": {
+      "properties": {
+        "columnName": "l_discount",
+        "columnType": "decimal(3, 3)"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 0,
+            "max_value": 0.3,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "extendedPrice": {
+      "properties": {
+        "columnName": "l_extendedprice",
+        "columnType": "decimal(7, 3)"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 100,
+            "max_value": 10000,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "supplierKey": {
+      "properties": {
+        "columnName": "l_suppkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "ref": "partSupplier.supplierKey"
+      }
+    },
+    "quantity": {
+      "properties": {
+        "columnName": "l_quantity",
+        "columnType": "int"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 1,
+            "max_value": 20
+          }
+        }
+      }
+    },
+    "returnFlag": {
+      "properties": {
+        "columnName": "l_returnflag",
+        "columnType": "varchar(5)"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "N",
+              "A",
+              "R"
+            ]   
+          }
+        }
+      }
+    },
+    "partKey": {
+      "properties": {
+        "columnName": "l_partkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "ref": "partSupplier.partKey"
+      }
+    },
+    "lineStatus": {
+      "properties": {
+        "columnName": "l_linestatus",
+        "columnType": "varchar(5)"
+      },
+      "value": {
+        "ref": "orders.status"
+      }
+    },
+    "tax": {
+      "properties": {
+        "columnName": "l_tax",
+        "columnType": "decimal(3, 3)"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 0,
+            "max_value": 0.5,
+            "right_digits": 1
+          }
+        }
+      }
+    },
+    "commitDate": {
+      "properties": {
+        "columnName": "l_commitdate",
+        "columnType": "date"
+      },
+      "value": {
+        "faker": {
+          "date_between": {
+            "start_date": "-1y"
+          }
+        }
+      }
+    },
+    "receiptDate": {
+      "properties": {
+        "columnName": "l_receiptdate",
+        "columnType": "date"
+      },
+      "value": {
+        "faker": {
+          "date_between": {
+            "start_date": "-1y"
+          }
+        }
+      }
+    },
+    "shippingMode": {
+      "properties": {
+        "columnName": "l_shipmode",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "RAIL",
+              "TRUCK",
+              "SHIP",
+              "MAIL",
+              "AIR",
+              "FOB",
+              "REG AIR"
+            ]
+          }
+        }
+      }
+    },
+    "lineNumber": {
+      "properties": {
+        "columnName": "l_linenumber",
+        "columnType": "int"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 1,
+            "max_value": 5
+          }
+        }
+      }
+    },
+    "shippingInstructions": {
+      "properties": {
+        "columnName": "l_shipinstruct",
+        "columnType": "varchar(512)"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "columnName": "l_comment",
+        "columnType": "varchar(512)"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

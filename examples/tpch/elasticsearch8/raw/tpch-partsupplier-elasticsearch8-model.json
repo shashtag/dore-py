@@ -1,0 +1,69 @@
+{
+  "records": 800000,
+  "datastore": "tpch-elasticsearch8",
+  "properties": {
+    "indexName": "partsupp"
+  },
+  "attributes": {
+    "partKey": {
+      "properties": {
+        "fieldName": "ps_partkey",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "ref": "part.key"
+      }
+    },
+    "supplierKey": {
+      "properties": {
+        "fieldName": "ps_suppkey",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "ref": "supplier.key"
+      }
+    },
+    "supplyCost": {
+      "properties": {
+        "fieldName": "ps_supplycost",
+        "fieldType": "float"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 1,
+            "max_value": 1000,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "availableQuantity": {
+      "properties": {
+        "fieldName": "ps_availqty",
+        "fieldType": "integer"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 1,
+            "max_value": 10000
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "fieldName": "ps_comment",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

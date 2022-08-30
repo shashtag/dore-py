@@ -1,0 +1,35 @@
+{
+  "id": "tpch_postgres",
+  "version": "1",
+  "models": {
+    "customer": {
+      "ref": "{{manifest-dir}}/tpch-customer-postgres-model.json"
+    },
+    "orders": {
+      "ref": "{{manifest-dir}}/tpch-orders-postgres-model.json"
+    },
+    "nation": {
+      "ref": "{{manifest-dir}}/tpch-nation-postgres-model.json"
+    },
+    "region": {
+      "ref": "{{manifest-dir}}/tpch-region-postgres-model.json"
+    },
+    "lineItem": {
+      "ref": "{{manifest-dir}}/tpch-lineitem-postgres-model.json"
+    },
+    "part": {
+      "ref": "{{manifest-dir}}/tpch-part-postgres-model.json"
+    },
+    "supplier": {
+      "ref": "{{manifest-dir}}/tpch-supplier-postgres-model.json"
+    },
+    "partSupplier": {
+      "ref": "{{manifest-dir}}/tpch-partsupplier-postgres-model.json"
+    }
+  },
+  "datastores": {
+    "tpch-postgres": {
+      "ref": "{{manifest-dir}}/tpch-postgres-datastore.json"
+    }
+  }
+}

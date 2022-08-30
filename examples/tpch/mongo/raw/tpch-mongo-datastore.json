@@ -1,0 +1,10 @@
+{
+  "protocol": "mongodb",
+  "properties": {
+    "database": "tpch_mongodb_database",
+    "host": "{{datastores-tpch-mongo-host}}",
+    "port": "{{datastores-tpch-mongo-port}}",
+    "user": "{{datastores-tpch-mongo-user}}",
+    "password": "{{datastores-tpch-mongo-password}}"
+  }
+}

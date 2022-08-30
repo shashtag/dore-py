@@ -1,0 +1,52 @@
+{
+  "records": 5,
+  "datastore": "tpch-mysql",
+  "properties": {
+    "tableName": "region"
+  },
+  "attributes": {
+    "key": {
+      "properties": {
+        "columnName": "r_regionkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "name": {
+      "properties": {
+        "columnName": "r_name",
+        "columnType": "varchar(30)"
+      },
+      "value": {
+        "selector": {
+          "roundRobin": {
+            "items": [
+              "AFRICA",
+              "AMERICA",
+              "ASIA",
+              "EUROPE",
+              "MIDDLE EAST"
+            ]
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "columnName": "r_comment",
+        "columnType": "varchar(512)"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

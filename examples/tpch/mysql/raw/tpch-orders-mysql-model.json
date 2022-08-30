@@ -1,0 +1,134 @@
+{
+  "records": 1500000,
+  "datastore": "tpch-mysql",
+  "properties": {
+    "tableName": "orders"
+  },
+  "attributes": {
+    "date": {
+      "properties": {
+        "columnName": "o_orderdate",
+        "columnType": "date"
+      },
+      "value": {
+        "faker": {
+          "date_between": {
+            "start_date": "-1M"
+          }
+        }
+      }
+    },
+    "key": {
+      "properties": {
+        "columnName": "o_orderkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "customerKey": {
+      "properties": {
+        "columnName": "o_custkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "ref": "customer.key"
+      }
+    },
+    "priority": {
+      "properties": {
+        "columnName": "o_orderpriority",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "4-NOT SPECIFIED",
+              "1-URGENT",
+              "5-LOW",
+              "3-MEDIUM",
+              "2-HIGH"
+            ]
+          }
+        }
+      }
+    },
+    "shippingPriority": {
+      "properties": {
+        "columnName": "o_shippriority",
+        "columnType": "int"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 1,
+            "max_value": 3
+          }
+        }
+      }
+    },
+    "clerk": {
+      "properties": {
+        "columnName": "o_clerk",
+        "columnType": "int"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 1,
+            "max_value": 500
+          }
+        }
+      }
+    },
+    "status": {
+      "properties": {
+        "columnName": "o_orderstatus",
+        "columnType": "varchar(5)"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "P",
+              "O",
+              "F"
+            ]
+          }
+        }
+      }
+    },
+    "totalPrice": {
+      "properties": {
+        "columnName": "o_totalprice",
+        "columnType": "decimal(7, 2)"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 100,
+            "max_value": 1000,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "columnName": "o_comment",
+        "columnType": "varchar(512)"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

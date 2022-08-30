@@ -1,0 +1,82 @@
+{
+  "records": 10000,
+  "datastore": "tpch-mongo",
+  "properties": {
+    "collectionName": "supplier"
+  },
+  "attributes": {
+    "key": {
+      "properties": {
+        "fieldName": "s_suppkey"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "nationKey": {
+      "properties": {
+        "fieldName": "s_nationkey"
+      },
+      "value": {
+        "ref": "nation.key"
+      }
+    },
+    "comment": {
+      "properties": {
+        "fieldName": "s_comment"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    },
+    "name": {
+      "properties": {
+        "fieldName": "s_name"
+      },
+      "value": {
+        "faker": {
+          "name": {}
+        }
+      }
+    },
+    "address": {
+      "properties": {
+        "fieldName": "s_address"
+      },
+      "value": {
+        "faker": {
+          "address": {}
+        }
+      }
+    },
+    "phone": {
+      "properties": {
+        "fieldName": "s_phone"
+      },
+      "value": {
+        "faker": {
+          "phone_number": {}
+        }
+      }
+    },
+    "accountBalance": {
+      "properties": {
+        "fieldName": "s_acctbal"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 100,
+            "max_value": 1000
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "records": 5,
+  "datastore": "tpch-mongo",
+  "properties": {
+    "collectionName": "region"
+  },
+  "attributes": {
+    "key": {
+      "properties": {
+        "fieldName": "r_regionkey"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "name": {
+      "properties": {
+        "fieldName": "r_name"
+      },
+      "value": {
+        "selector": {
+          "roundRobin": {
+            "items": [
+              "AFRICA",
+              "AMERICA",
+              "ASIA",
+              "EUROPE",
+              "MIDDLE EAST"
+            ]
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "fieldName": "r_comment"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

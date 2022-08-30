@@ -1,0 +1,52 @@
+{
+  "records": 5,
+  "datastore": "tpch-elasticsearch8",
+  "properties": {
+    "indexName": "region"
+  },
+  "attributes": {
+    "key": {
+      "properties": {
+        "fieldName": "r_regionkey",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "name": {
+      "properties": {
+        "fieldName": "r_name",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "selector": {
+          "roundRobin": {
+            "items": [
+              "AFRICA",
+              "AMERICA",
+              "ASIA",
+              "EUROPE",
+              "MIDDLE EAST"
+            ]
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "fieldName": "r_comment",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

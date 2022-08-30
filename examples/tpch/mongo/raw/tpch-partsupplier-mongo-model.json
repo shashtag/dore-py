@@ -1,0 +1,64 @@
+{
+  "records": 800000,
+  "datastore": "tpch-mongo",
+  "properties": {
+    "collectionName": "partsupp"
+  },
+  "attributes": {
+    "partKey": {
+      "properties": {
+        "fieldName": "ps_partkey"
+      },
+      "value": {
+        "ref": "part.key"
+      }
+    },
+    "supplierKey": {
+      "properties": {
+        "fieldName": "ps_suppkey"
+      },
+      "value": {
+        "ref": "supplier.key"
+      }
+    },
+    "supplyCost": {
+      "properties": {
+        "fieldName": "ps_supplycost"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 1,
+            "max_value": 1000,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "availableQuantity": {
+      "properties": {
+        "fieldName": "ps_availqty"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 1,
+            "max_value": 10000
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "fieldName": "ps_comment"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

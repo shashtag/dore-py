@@ -1,0 +1,29 @@
+{
+  "records": 5,
+  "properties": {
+    "collectionName": "street"
+  },
+  "datastore": "mongo-nested-docs",
+  "attributes": {
+    "streetName": {
+      "properties": {
+        "fieldName": "street_name"
+      },
+      "value": {
+        "faker": {
+          "street_name": {}
+        }
+      }
+    },
+    "streetAddress": {
+      "properties": {
+        "fieldName": "street_address"
+      },
+      "value": {
+        "faker": {
+          "street_address": {}
+        }
+      }
+    }
+  }
+}

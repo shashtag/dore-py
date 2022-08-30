@@ -1,0 +1,29 @@
+{
+  "records": 100,
+  "datastore": "mongo-nested-docs",
+  "properties": {
+    "collectionName": "profile"
+  },
+  "attributes": {
+    "name": {
+      "properties": {
+        "fieldName": "profile_name"
+      },
+      "value": {
+        "faker": {
+          "name": {}
+        }
+      }
+    },
+    "address": {
+      "properties": {
+        "fieldName": "profile_address"
+      },
+      "value": {
+        "composite": {
+          "ref": "address"
+        }
+      }
+    }
+  }
+}

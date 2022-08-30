@@ -1,0 +1,66 @@
+{
+  "records": 25,
+  "datastore": "tpch-mysql",
+  "properties": {
+    "tableName": "nation"
+  },
+  "attributes": {
+    "key": {
+      "properties": {
+        "columnName": "n_nationkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "name": {
+      "properties": {
+        "columnName": "n_name",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "selector": {
+          "roundRobin": {
+            "items": [
+              "ALGERIA",
+              "ARGENTINA",
+              "BRAZIL",
+              "CANADA",
+              "EGYPT",
+              "ETHIOPIA",
+              "FRANCE",
+              "GERMANY",
+              "INDIA",
+              "INDONESIA"
+            ]
+          }
+        }
+      }
+    },
+    "regionKey": {
+      "properties": {
+        "columnName": "n_regionkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "ref": "region.key"
+      }
+    },
+    "comment": {
+      "properties": {
+        "columnName": "n_comment",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

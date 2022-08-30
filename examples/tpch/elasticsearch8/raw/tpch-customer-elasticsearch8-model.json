@@ -1,0 +1,103 @@
+{
+  "records": 150000,
+  "datastore": "tpch-elasticsearch8",
+  "properties": {
+    "indexName": "customer"
+  },
+  "attributes": {
+    "key": {
+      "properties": {
+        "fieldName": "c_custkey",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "marketSegment": {
+      "properties": {
+        "fieldName": "c_mktsegment",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "BUILDING",
+              "MACHINERY",
+              "FURNITURE",
+              "AUTOMOBILE",
+              "HOUSEHOLD"
+            ]
+          }
+        }
+      }
+    },
+    "name": {
+      "properties": {
+        "fieldName": "c_name",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "name": {}
+        }
+      }
+    },
+    "nationKey": {
+      "ref": "{{manifest-dir}}/tpch-customer-model-nationKey-attribute-elasticsearch8.json"
+    },
+    "address": {
+      "properties": {
+        "fieldName": "c_address",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "address": {}
+        }
+      }
+    },
+    "phone": {
+      "properties": {
+        "fieldName": "c_phone",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "phone_number": {}
+        }
+      }
+    },
+    "accountBalance": {
+      "properties": {
+        "fieldName": "c_acctbal",
+        "fieldType": "float"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": -1000,
+            "max_value": 1000,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "fieldName": "c_comment",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

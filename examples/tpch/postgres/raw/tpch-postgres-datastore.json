@@ -1,0 +1,10 @@
+{
+  "protocol": "postgres",
+  "properties": {
+    "database": "bidi_example_tpch_postgres_db",
+    "host": "{{datastores-tpch-postgres-host}}",
+    "port": "{{datastores-tpch-postgres-port}}",
+    "user": "{{datastores-tpch-postgres-user}}",
+    "password": "{{datastores-tpch-postgres-password}}"
+  }
+}

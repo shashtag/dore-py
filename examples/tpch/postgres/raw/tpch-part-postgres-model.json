@@ -1,0 +1,350 @@
+{
+  "records": 200000,
+  "datastore": "tpch-postgres",
+  "properties": {
+    "tableName": "part",
+    "schemaName": "tpch_schema"
+  },
+  "attributes": {
+    "key": {
+      "properties": {
+        "columnName": "p_partkey",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "type": {
+      "properties": {
+        "columnName": "p_type",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "LARGE PLATED TIN",
+              "LARGE POLISHED STEEL",
+              "STANDARD PLATED COPPER",
+              "STANDARD BURNISHED BRASS",
+              "ECONOMY BRUSHED BRASS",
+              "STANDARD POLISHED BRASS",
+              "PROMO POLISHED NICKEL",
+              "STANDARD PLATED BRASS",
+              "LARGE BRUSHED BRASS",
+              "SMALL BRUSHED COPPER",
+              "PROMO BRUSHED BRASS",
+              "ECONOMY POLISHED STEEL",
+              "SMALL BRUSHED TIN",
+              "PROMO BURNISHED COPPER",
+              "PROMO BRUSHED STEEL",
+              "STANDARD ANODIZED STEEL",
+              "MEDIUM ANODIZED BRASS",
+              "STANDARD PLATED NICKEL",
+              "SMALL POLISHED COPPER",
+              "LARGE BURNISHED COPPER",
+              "SMALL BURNISHED BRASS",
+              "ECONOMY PLATED TIN",
+              "PROMO BURNISHED TIN",
+              "MEDIUM POLISHED TIN",
+              "ECONOMY ANODIZED TIN",
+              "MEDIUM PLATED NICKEL",
+              "LARGE ANODIZED NICKEL",
+              "MEDIUM BRUSHED NICKEL",
+              "ECONOMY PLATED BRASS",
+              "LARGE POLISHED COPPER",
+              "STANDARD BRUSHED BRASS",
+              "MEDIUM PLATED BRASS",
+              "STANDARD ANODIZED TIN",
+              "PROMO ANODIZED COPPER",
+              "PROMO PLATED NICKEL",
+              "PROMO ANODIZED NICKEL",
+              "ECONOMY BRUSHED NICKEL",
+              "SMALL POLISHED TIN",
+              "MEDIUM BURNISHED NICKEL",
+              "SMALL POLISHED NICKEL",
+              "LARGE BRUSHED NICKEL",
+              "LARGE POLISHED TIN",
+              "PROMO POLISHED COPPER",
+              "STANDARD PLATED TIN",
+              "ECONOMY POLISHED TIN",
+              "LARGE BRUSHED TIN",
+              "MEDIUM ANODIZED COPPER",
+              "STANDARD ANODIZED NICKEL",
+              "STANDARD BRUSHED COPPER",
+              "PROMO POLISHED STEEL",
+              "LARGE ANODIZED COPPER",
+              "STANDARD BRUSHED NICKEL",
+              "MEDIUM POLISHED STEEL",
+              "PROMO PLATED TIN",
+              "STANDARD POLISHED NICKEL",
+              "PROMO PLATED STEEL",
+              "PROMO ANODIZED BRASS",
+              "ECONOMY BURNISHED COPPER",
+              "LARGE BURNISHED STEEL",
+              "SMALL POLISHED STEEL",
+              "ECONOMY ANODIZED NICKEL",
+              "PROMO BRUSHED NICKEL",
+              "MEDIUM PLATED COPPER",
+              "ECONOMY BURNISHED TIN",
+              "LARGE PLATED STEEL",
+              "MEDIUM ANODIZED NICKEL",
+              "STANDARD BRUSHED TIN",
+              "PROMO BURNISHED BRASS",
+              "PROMO POLISHED TIN",
+              "ECONOMY POLISHED NICKEL",
+              "MEDIUM POLISHED NICKEL",
+              "MEDIUM POLISHED COPPER",
+              "MEDIUM BRUSHED TIN",
+              "STANDARD PLATED STEEL",
+              "PROMO BRUSHED COPPER",
+              "SMALL POLISHED BRASS",
+              "MEDIUM PLATED TIN",
+              "LARGE BURNISHED BRASS",
+              "MEDIUM BURNISHED COPPER",
+              "MEDIUM BRUSHED BRASS",
+              "PROMO BURNISHED STEEL",
+              "STANDARD POLISHED TIN",
+              "STANDARD POLISHED STEEL",
+              "LARGE ANODIZED BRASS",
+              "STANDARD POLISHED COPPER",
+              "SMALL BRUSHED NICKEL",
+              "SMALL PLATED TIN",
+              "ECONOMY PLATED COPPER",
+              "LARGE POLISHED NICKEL",
+              "PROMO BRUSHED TIN",
+              "PROMO POLISHED BRASS",
+              "MEDIUM ANODIZED STEEL",
+              "STANDARD ANODIZED COPPER",
+              "ECONOMY POLISHED BRASS",
+              "LARGE BURNISHED TIN",
+              "ECONOMY BRUSHED TIN",
+              "LARGE PLATED BRASS",
+              "ECONOMY ANODIZED STEEL",
+              "SMALL BURNISHED COPPER",
+              "ECONOMY ANODIZED COPPER",
+              "ECONOMY BURNISHED NICKEL",
+              "ECONOMY PLATED NICKEL",
+              "STANDARD BURNISHED STEEL",
+              "SMALL ANODIZED BRASS",
+              "STANDARD BURNISHED NICKEL",
+              "SMALL BRUSHED BRASS",
+              "SMALL BRUSHED STEEL",
+              "SMALL ANODIZED STEEL",
+              "SMALL ANODIZED COPPER",
+              "PROMO PLATED BRASS",
+              "PROMO PLATED COPPER",
+              "SMALL BURNISHED TIN",
+              "ECONOMY BURNISHED BRASS",
+              "MEDIUM PLATED STEEL",
+              "STANDARD BRUSHED STEEL",
+              "MEDIUM POLISHED BRASS",
+              "SMALL PLATED BRASS",
+              "LARGE ANODIZED TIN",
+              "PROMO BURNISHED NICKEL",
+              "SMALL PLATED COPPER",
+              "MEDIUM BURNISHED STEEL",
+              "MEDIUM BRUSHED COPPER",
+              "LARGE BURNISHED NICKEL",
+              "LARGE BRUSHED STEEL",
+              "LARGE BRUSHED COPPER",
+              "ECONOMY PLATED STEEL",
+              "ECONOMY BRUSHED COPPER",
+              "ECONOMY ANODIZED BRASS",
+              "PROMO ANODIZED TIN",
+              "LARGE ANODIZED STEEL",
+              "SMALL BURNISHED STEEL",
+              "LARGE PLATED COPPER",
+              "LARGE PLATED NICKEL",
+              "ECONOMY BRUSHED STEEL",
+              "STANDARD ANODIZED BRASS",
+              "MEDIUM BURNISHED TIN",
+              "MEDIUM BRUSHED STEEL",
+              "LARGE POLISHED BRASS",
+              "SMALL ANODIZED TIN",
+              "SMALL BURNISHED NICKEL",
+              "ECONOMY BURNISHED STEEL",
+              "SMALL ANODIZED NICKEL",
+              "SMALL PLATED STEEL",
+              "PROMO ANODIZED STEEL",
+              "ECONOMY POLISHED COPPER",
+              "STANDARD BURNISHED COPPER",
+              "MEDIUM BURNISHED BRASS",
+              "SMALL PLATED NICKEL",
+              "MEDIUM ANODIZED TIN",
+              "STANDARD BURNISHED TIN"
+            ]
+          }
+        }
+      }
+    },
+    "size": {
+      "properties": {
+        "columnName": "p_size",
+        "columnType": "int"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 0,
+            "max_value": 5
+          }
+        }
+      }
+    },
+    "brand": {
+      "properties": {
+        "columnName": "p_brand",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "Brand#43",
+              "Brand#55",
+              "Brand#53",
+              "Brand#13",
+              "Brand#14",
+              "Brand#33",
+              "Brand#35",
+              "Brand#51",
+              "Brand#41",
+              "Brand#32",
+              "Brand#22",
+              "Brand#23",
+              "Brand#11",
+              "Brand#52",
+              "Brand#54",
+              "Brand#42",
+              "Brand#21",
+              "Brand#12",
+              "Brand#25",
+              "Brand#44",
+              "Brand#24",
+              "Brand#34",
+              "Brand#45",
+              "Brand#31",
+              "Brand#15"
+            ]
+          }
+        }
+      }
+    },
+    "name": {
+      "properties": {
+        "columnName": "p_name",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "faker": {
+          "name": {}
+        }
+      }
+    },
+    "container": {
+      "properties": {
+        "columnName": "p_container",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "selector": {
+          "random": {
+             "items": [
+            "LG BAG",
+            "LG CASE",
+            "WRAP CASE",
+            "LG PKG",
+            "MED PACK",
+            "MED CASE",
+            "LG CAN",
+            "SM BOX",
+            "WRAP BOX",
+            "LG BOX",
+            "JUMBO PACK",
+            "WRAP DRUM",
+            "JUMBO DRUM",
+            "SM DRUM",
+            "SM CAN",
+            "MED BAG",
+            "JUMBO BAG",
+            "SM PKG",
+            "MED PKG",
+            "SM CASE",
+            "JUMBO PKG",
+            "MED CAN",
+            "WRAP JAR",
+            "JUMBO JAR",
+            "SM BAG",
+            "WRAP PACK",
+            "LG PACK",
+            "WRAP PKG",
+            "SM PACK",
+            "WRAP BAG",
+            "MED BOX",
+            "MED JAR",
+            "LG JAR",
+            "JUMBO BOX",
+            "JUMBO CAN",
+            "SM JAR",
+            "MED DRUM",
+            "LG DRUM",
+            "WRAP CAN",
+            "JUMBO CASE"
+          ]
+          }
+        }
+      }
+    },
+    "manufacturer": {
+      "properties": {
+        "columnName": "p_mfgr",
+        "columnType": "varchar(256)"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "Manufacturer#4",
+              "Manufacturer#5",
+              "Manufacturer#1",
+              "Manufacturer#3",
+              "Manufacturer#2"
+            ]
+          }
+        }
+      }
+    },
+    "retailPrice": {
+      "properties": {
+        "columnName": "p_retailprice",
+        "columnType": "decimal(10,4)"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 100,
+            "max_value": 1000,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "columnName": "p_comment",
+        "columnType": "varchar(512)"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

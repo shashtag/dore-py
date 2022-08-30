@@ -1,0 +1,137 @@
+{
+  "records": 1500000,
+  "datastore": "tpch-elasticsearch8",
+  "properties": {
+    "indexName": "orders"
+  },
+  "attributes": {
+    "date": {
+      "properties": {
+        "fieldName": "o_orderdate",
+        "fieldType": {
+          "type": "date",
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis||yyyy-MM-dd"
+        }
+      },
+      "value": {
+        "faker": {
+          "date_between": {
+            "start_date": "-1M"
+          }
+        }
+      }
+    },
+    "key": {
+      "properties": {
+        "fieldName": "o_orderkey",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "uuid4": {}
+        }
+      }
+    },
+    "customerKey": {
+      "properties": {
+        "fieldName": "o_custkey",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "ref": "customer.key"
+      }
+    },
+    "priority": {
+      "properties": {
+        "fieldName": "o_orderpriority",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+            "4-NOT SPECIFIED",
+            "1-URGENT",
+            "5-LOW",
+            "3-MEDIUM",
+            "2-HIGH"
+            ]
+          }
+        }
+      }
+    },
+    "shippingPriority": {
+      "properties": {
+        "fieldName": "o_shippriority",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 1,
+            "max_value": 3
+          }
+        }
+      }
+    },
+    "clerk": {
+      "properties": {
+        "fieldName": "o_clerk",
+        "fieldType": "integer"
+      },
+      "value": {
+        "faker": {
+          "pyint": {
+            "min_value": 1,
+            "max_value": 500
+          }
+        }
+      }
+    },
+    "status": {
+      "properties": {
+        "fieldName": "o_orderstatus",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "selector": {
+          "random": {
+            "items": [
+              "P",
+              "O",
+              "F"
+            ]
+          }
+        }
+      }
+    },
+    "totalPrice": {
+      "properties": {
+        "fieldName": "o_totalprice",
+        "fieldType": "float"
+      },
+      "value": {
+        "faker": {
+          "pyfloat": {
+            "min_value": 100,
+            "max_value": 1000,
+            "right_digits": 2
+          }
+        }
+      }
+    },
+    "comment": {
+      "properties": {
+        "fieldName": "o_comment",
+        "fieldType": "keyword"
+      },
+      "value": {
+        "faker": {
+          "sentence": {
+            "nb_words": 20
+          }
+        }
+      }
+    }
+  }
+}

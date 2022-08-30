@@ -1,0 +1,34 @@
+{
+  "id": "tpch_elasticsearch8",
+  "models": {
+    "customer": {
+      "ref": "{{manifest-dir}}/tpch-customer-elasticsearch8-model.json"
+    },
+    "orders": {
+      "ref": "{{manifest-dir}}/tpch-orders-elasticsearch8-model.json"
+    },
+    "nation": {
+      "ref": "{{manifest-dir}}/tpch-nation-elasticsearch8-model.json"
+    },
+    "region": {
+      "ref": "{{manifest-dir}}/tpch-region-elasticsearch8-model.json"
+    },
+    "lineItem": {
+      "ref": "{{manifest-dir}}/tpch-lineitem-elasticsearch8-model.json"
+    },
+    "part": {
+      "ref": "{{manifest-dir}}/tpch-part-elasticsearch8-model.json"
+    },
+    "supplier": {
+      "ref": "{{manifest-dir}}/tpch-supplier-elasticsearch8-model.json"
+    },
+    "partSupplier": {
+      "ref": "{{manifest-dir}}/tpch-partsupplier-elasticsearch8-model.json"
+    }
+  },
+  "datastores": {
+    "tpch-elasticsearch8": {
+      "ref": "{{manifest-dir}}/tpch-elasticsearch8-datastore.json"
+    }
+  }
+}

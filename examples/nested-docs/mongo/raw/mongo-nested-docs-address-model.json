@@ -1,0 +1,35 @@
+{
+  "persistence": "NO_PERSIST",
+  "attributes": {
+    "country": {
+      "properties": {
+        "fieldName": "profile_address_country"
+      },
+      "value": {
+        "faker": {
+          "country": {}
+        }
+      }
+    },
+    "city": {
+      "properties": {
+        "fieldName": "profile_address_city"
+      },
+      "value": {
+        "faker": {
+          "city": {}
+        }
+      }
+    },
+    "street": {
+      "properties": {
+        "fieldName": "profile_address_street"
+      },
+      "value": {
+        "composite": {
+          "ref": "street"
+        }
+      }
+    }
+  }
+}
