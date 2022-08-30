@@ -54,9 +54,9 @@ dore --manifest /path/to/manifest.json --var1=val1 --var2=val2 ...
 ## Useful Links
 
 * [GitHub](https://github.com/bkn-dore/dore-py)
-* [Tutorial](./tutorial)
-* [Examples](./examples)
-* [Manifest Docs](https://github.com/bkn-dore/bkn-dore.github.io)
+* [Tutorial](https://github.com/bkn-dore/dore-py/tree/master/tutorial)
+* [Examples](https://github.com/bkn-dore/dore-py/tree/master/examples)
+* [Manifest Docs](https://bkn-dore.github.io)
 
 ## CLI Options
 `Dore` command supports the following cli args. Required options are specified with `**` next to them. 
