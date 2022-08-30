@@ -53,10 +53,10 @@ dore --manifest /path/to/manifest.json --var1=val1 --var2=val2 ...
 
 ## Useful Links
 
-* [GitHub](https://github.com/Dore-datagen/Dore-py)
+* [GitHub](https://github.com/bkn-dore/dore-py)
 * [Tutorial](./tutorial)
 * [Examples](./examples)
-* [Manifest Docs](https://Dore-datagen.github.io/)
+* [Manifest Docs](https://github.com/bkn-dore/bkn-dore.github.io)
 
 ## CLI Options
 `Dore` command supports the following cli args. Required options are specified with `**` next to them. 
@@ -131,21 +131,9 @@ non trivial) database schema from scratch!
 
 ## Examples
 
-There are examples present in [examples](./examples) directory of this repo. The snippet below shows how you can run 
-the `tpch` example.
-
-```shell
-(dore-venv)$ dore \
-  --scale 0.01 \
-  --manifest (repo_dir)/examples/tpch/tpch-combined-manifest.json \
-  --datastores-tpch-postgres-host=(postgres_host) \
-  --datastores-tpch-postgres-port=(postgres_port) \
-  --datastores-tpch-postgres-user=(postgres_user) \
-  --datastores-tpch-postgres-password=(postgres_password)
-```
-
-We have created examples for some protocols in the [examples](./examples) directory of the repo. These can help you
-get started on creating your first manifest or can serve as a reference in case you're stuck.
+There are examples present in [examples](./examples) directory of this repo with instructions
+on how to execute them. These can help you get started on creating your first manifest or can serve as a reference 
+in case you're stuck.
 
 # More on CLI options
 

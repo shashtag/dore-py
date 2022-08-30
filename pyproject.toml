@@ -9,7 +9,7 @@ description = "Schema based fake data generator"
 readme = "README.md"
 authors = ["Bhargav KN <bhargavkn.1996@gmail.com>"]
 license = "Apache-2.0"
-repository = "https://github.com/dore-datagen/dore-py"
+repository = "https://github.com/bkn-dore/dore-py"
 include = [
     "src/*",
 ]
